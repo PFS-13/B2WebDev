@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Advanced Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex h-screen bg-gray-200">
+      <!-- Sidebar -->
+      <div class="bg-white shadow-lg w-64">
+        <div class="p-4 font-bold text-lg text-gray-800">Admin Dashboard</div>
+        <nav>
+          <ul class="text-sm text-gray-700">
+            <li class="p-4 hover:bg-gray-300"><a href="#">Dashboard</a></li>
+            <li class="p-4 hover:bg-gray-300"><a href="#">Orders</a></li>
+            <li class="p-4 hover:bg-gray-300"><a href="#">Products</a></li>
+            <li class="p-4 hover:bg-gray-300"><a href="#">Customers</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Page Content -->
+      <div class="flex-1 p-4">
+        <!-- Header -->
+        <header class="flex justify-between items-center bg-white shadow p-4">
+          <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+          <div class="relative">
+            <input
+              type="text"
+              class="border rounded-lg pl-8 pr-4 py-2 w-full"
+              placeholder="Search..."
+            />
+            <svg
+              class="absolute left-2 top-2 w-4 h-4 text-gray-500"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.9 14.32a8 8 0 111.42-1.42l4.58 4.58a1 1 0 01-1.42 1.42l-4.58-4.58zM8 14a6 6 0 100-12 6 6 0 000 12z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <div class="relative">
+            <button
+              class="text-gray-500 hover:text-gray-700 focus:outline-none"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 12h14M12 5l7 7-7 7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <div class="grid grid-cols-4 gap-4 mt-4">
+          <div class="bg-blue-500 text-white p-4 rounded-lg shadow">
+            <div class="text-2xl">Sales</div>
+            <div class="text-sm opacity-75">Updated just now</div>
+          </div>
+          <div class="bg-green-500 text-white p-4 rounded-lg shadow">
+            <div class="text-2xl">Revenue</div>
+            <div class="text-sm opacity-75">Updated just now</div>
+          </div>
+          <!-- Tambahkan kartu lainnya -->
+        </div>
+
+        <!-- Tabel data -->
+        <div class="bg-white rounded-lg shadow mt-4">
+          <div class="p-4 font-bold text-lg">Data Table Example</div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white">
+              <thead>
+                <tr>
+                  <th class="py-2 px-4 border-b border-gray-300">Name</th>
+                  <th class="py-2 px-4 border-b border-gray-300">Position</th>
+                  <th class="py-2 px-4 border-b border-gray-300">Office</th>
+                  <th class="py-2 px-4 border-b border-gray-300">Age</th>
+                  <th class="py-2 px-4 border-b border-gray-300">Start date</th>
+                  <th class="py-2 px-4 border-b border-gray-300">Salary</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Data rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Grafik -->
+        <div class="bg-white rounded-lg shadow mt-4 p-4">
+          <canvas id="myAreaChart" width="100%" height="40"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tailwind core JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.js"></script>
+
+    <!-- Grafik menggunakan Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Setup Chart
+      var ctx = document.getElementById('myAreaChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+          datasets: [
+            {
+              label: 'Sales',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
