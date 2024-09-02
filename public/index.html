@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Shopping Experience</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #ar-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <button id="ar-button">Start AR</button>
+    <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <a-entity gltf-model="url(/path/to/3d-model.gltf)" scale="0.5 0.5 0.5"></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+    <script>
+        document.getElementById('ar-button').addEventListener('click', () => {
+            document.querySelector('a-scene').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
