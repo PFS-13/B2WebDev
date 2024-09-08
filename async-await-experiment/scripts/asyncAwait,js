@@ -1,0 +1,39 @@
+function getData() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Data retrieved");
+            resolve("Data");
+        }, 500);
+    });
+}
+
+function processData(data) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Processing data:", data);
+            resolve("Processed Data");
+        }, 400);
+    });
+}
+
+function saveData(data) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Saving data:", data);
+            resolve("Data saved");
+        }, 300);
+    });
+}
+
+async function handleData() {
+    try {
+        const data = await getData();
+        const processedData = await processData(data);
+        const message = await saveData(processedData);
+        console.log(message);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+handleData();

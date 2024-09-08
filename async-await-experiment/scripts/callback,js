@@ -1,0 +1,28 @@
+function getData(callback) {
+    setTimeout(() => {
+        console.log("Data retrieved");
+        callback("Data");
+    }, 500);
+}
+
+function processData(data, callback) {
+    setTimeout(() => {
+        console.log("Processing data:", data);
+        callback("Processed Data");
+    }, 400);
+}
+
+function saveData(data, callback) {
+    setTimeout(() => {
+        console.log("Saving data:", data);
+        callback("Data saved");
+    }, 300);
+}
+
+getData((data) => {
+    processData(data, (processedData) => {
+        saveData(processedData, (message) => {
+            console.log(message);
+        });
+    });
+});
