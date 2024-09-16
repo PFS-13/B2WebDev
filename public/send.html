@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Notification</title>
+</head>
+<body>
+    <h1>Send Notification</h1>
+    <input id="notificationInput" type="text" placeholder="Enter notification message" />
+    <button id="sendButton">Send Notification</button>
+
+    <script>
+        document.getElementById('sendButton').addEventListener('click', () => {
+            const input = document.getElementById('notificationInput');
+            const message = input.value;
+            if (message) {
+                fetch('/notify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message }),
+                }).then(response => {
+                    if (response.ok) {
+                        console.log('Notification sent');
+                        input.value = '';
+                    } else {
+                        console.error('Failed to send notification');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
