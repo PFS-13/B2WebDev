@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SSE Notifications</h1>
+    <ul id="notifications"></ul>
+
+    <script>
+        const eventSource = new EventSource('/events');
+
+        eventSource.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            const notificationElement = document.createElement('li');
+            notificationElement.textContent = `${data.timestamp}: ${data.message}`;
+            document.getElementById('notifications').appendChild(notificationElement);
+        };
+
+        eventSource.onerror = function(error) {
+            console.error('EventSource failed:', error);
+        };
+    </script>
+</body>
+</html>
