@@ -1,0 +1,24 @@
+/* CSS Animations */
+@keyframes css-expand {
+    0% { transform: scale(1) rotate(0deg); background-color: #ff0000; }
+    50% { transform: scale(1.5) rotate(180deg); background-color: #00ff00; }
+    100% { transform: scale(1) rotate(360deg); background-color: #0000ff; }
+}
+
+#css-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ff0000;
+    animation: css-expand 4s infinite;
+}
+
+/* Styling for better visibility */
+.box {
+    display: inline-block;
+    margin: 20px;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}

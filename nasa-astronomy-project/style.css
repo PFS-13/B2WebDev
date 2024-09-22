@@ -1,0 +1,83 @@
+/* Reset margin dan padding default */
+body, h1, p, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling untuk body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Styling untuk header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* Styling untuk main konten */
+main {
+    padding: 20px;
+}
+
+/* Kontainer untuk gambar-gambar APOD */
+#apod-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Styling untuk item gambar */
+.apod-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 300px;
+    width: 100%;
+    /* Menjaga gambar responsif */
+    flex: 1 1 200px;
+}
+
+/* Styling gambar di dalam item */
+.apod-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Styling untuk teks tanggal */
+.apod-date {
+    font-size: 0.9em;
+    color: #555;
+    padding: 10px;
+}
+
+/* Styling untuk judul gambar */
+.apod-title {
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+/* Styling untuk deskripsi gambar */
+.apod-description {
+    font-size: 1em;
+    color: #666;
+    padding: 0 10px 10px;
+}
+
+/* Kontrol scroll jika item gambar melebihi tinggi kontainer */
+main {
+    max-height: 100vh; /* Maksimal tinggi viewport */
+    overflow-y: auto;  /* Aktifkan scroll vertikal */
+    padding-bottom: 20px; /* Spasi ekstra di bagian bawah untuk scrollbar */
+}

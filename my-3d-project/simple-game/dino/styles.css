@@ -1,0 +1,30 @@
+#gameCanvas {
+    width: 600px;
+    height: 200px;
+    border: 2px solid #000;
+    position: relative;
+    background-color: #87CEEB; /* Sky blue */
+}
+
+.dino {
+    width: 40px;
+    height: 40px;
+    background-color: #228B22; /* Green */
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+}
+
+.cactus {
+    width: 20px;
+    height: 40px;
+    background-color: #8B4513; /* Brown */
+    position: absolute;
+    bottom: 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

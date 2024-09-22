@@ -1,0 +1,24 @@
+/* Animasi CSS Vertikal */
+@keyframes css-vertical-move {
+    0% { transform: translateY(0); background-color: #ff0000; }
+    50% { transform: translateY(200px); background-color: #00ff00; }
+    100% { transform: translateY(0); background-color: #0000ff; }
+}
+
+#css-vertical {
+    width: 150px;
+    height: 150px;
+    background-color: #ff0000;
+    animation: css-vertical-move 4s infinite;
+}
+
+/* Styling for better visibility */
+.box {
+    display: inline-block;
+    margin: 20px;
+    line-height: 150px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
