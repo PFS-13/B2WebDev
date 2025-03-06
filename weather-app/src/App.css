@@ -1,0 +1,85 @@
+/* App.css */
+
+.weather-app {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  background: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.header form {
+  display: flex;
+  justify-content: center;
+}
+
+.header input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: calc(100% - 120px);
+  margin-right: 10px;
+}
+
+.header button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header button:hover {
+  background-color: #218838;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.weather-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.city-name h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.weather-details {
+  background: #f7f9fc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weather-details img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.weather-details p {
+  margin: 10px 0;
+  font-size: 1.2em;
+}

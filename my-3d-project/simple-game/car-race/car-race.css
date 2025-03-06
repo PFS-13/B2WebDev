@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.game-container {
+    text-align: center;
+}
+
+#gameCanvas {
+    width: 400px;
+    height: 600px;
+    border: 2px solid #000;
+    position: relative;
+    background: linear-gradient(to bottom, #333 50%, #999 50%);
+    overflow: hidden;
+}
+
+#car {
+    width: 50px;
+    height: 80px;
+    background-color: #FF0000; /* Red */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.obstacle {
+    width: 50px;
+    height: 80px;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+}
